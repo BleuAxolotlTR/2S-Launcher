@@ -12,11 +12,6 @@
 - [Minimalist Tasarım.]
 - [Uygulama Gizleme.]
 
-## 📸 Ekran Görüntüleri
-
-<!-- Görselleri depoya ekleyip yolunu yazın -->
-![Ana ekran](docs/screenshot-1.png)
-
 ## 📥 Kurulum
 
 ### Hazır sürüm (önerilen)
@@ -33,23 +28,12 @@ cd 2S-Launcher
 # [Bağımlılıkları yükleme komutu]
 # [Çalıştırma / derleme komutu]
 ```
-
-**Gereksinimler:** [örn. Java 17+, Node.js 20+, .NET 8 vb.]
-
 ## 🚀 Kullanım
 
 1. Launcher'ı açın.
-2. [Hesabınızla giriş yapın / profil oluşturun].
-3. [Sürümü seçin] ve **Oyna** butonuna basın.
+2. Ve Kullanmaya Başlayın.
 
 ## 🗂️ Proje Yapısı
-
-```
-2S-Launcher/
-├── src/        # Kaynak kodlar
-├── assets/     # Görseller ve kaynaklar
-└── README.md
-```
 
 ## 🤝 Katkıda Bulunma
 
