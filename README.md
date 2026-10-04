@@ -17,8 +17,8 @@
 ### Hazır sürüm (önerilen)
 
 1. [Releases](https://github.com/BleuAxolotlTR/2S-Launcher/releases) sayfasına gidin.
-2. İşletim sisteminize uygun dosyayı indirin.
-3. Dosyayı çalıştırın ve ekrandaki adımları izleyin.
+2. 2S-Launcher.apk Dosyasını Indirin.
+3. Dosyayı çalıştırın ve kurulum adımlarını Tamamlayın.
 
 ### Kaynaktan derleme
 
