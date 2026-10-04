@@ -22,11 +22,62 @@
 
 ### Kaynaktan derleme
 
+### 1. Depoyu klonlayın
+
 ```bash
 git clone https://github.com/BleuAxolotlTR/2S-Launcher.git
 cd 2S-Launcher
-# [Bağımlılıkları yükleme komutu]
-# [Çalıştırma / derleme komutu]
+```
+
+> Projede alt modül (submodule) varsa şunu da çalıştırın:
+> ```bash
+> git submodule update --init --recursive
+> ```
+
+### 2. Android Studio ile derleme
+
+1. Android Studio'yu açın ve **File → Open** ile proje klasörünü seçin.
+2. Gradle senkronizasyonunun bitmesini bekleyin. Eksik SDK bileşenleri için Android Studio indirme önerecektir.
+3. Bir cihaz veya emülatör bağlayıp **Run ▶** butonuna basın.
+
+### 3. Komut satırı ile derleme
+
+**Linux / macOS:**
+
+```bash
+chmod +x gradlew
+./gradlew assembleDebug
+```
+
+**Windows:**
+
+```bat
+gradlew.bat assembleDebug
+```
+
+Derlenen APK şu konumda oluşur:
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+### 4. Release (imzalı) APK oluşturma
+
+1. Bir anahtar deposu (keystore) oluşturun:
+
+```bash
+   keytool -genkey -v -keystore 2s-launcher.jks -keyalg RSA -keysize 2048 -validity 10000 -alias 2s
+```
+
+2. `app/build.gradle` içinde `signingConfigs` bölümünü kendi keystore bilgilerinizle yapılandırın. Şifreleri depoya **eklemeyin**; `local.properties` veya ortam değişkenleri kullanın.
+3. Release APK'yı derleyin:
+
+```bash
+   ./gradlew assembleRelease
+```
+
+Çıktı: `app/build/outputs/apk/release/app-release.apk`
+
 ```
 ## 🚀 Kullanım
 
@@ -47,7 +98,7 @@ Hata bildirimleri ve öneriler için [Issues](https://github.com/BleuAxolotlTR/2
 
 ## 📄 Lisans
 
-Bu proje [LİSANS] lisansı altında dağıtılmaktadır. Ayrıntılar için `LICENSE` dosyasına bakın.
+Bu proje GNU GENERAL PUBLIC LICENSE lisansı altında dağıtılmaktadır. Ayrıntılar için `LICENSE` dosyasına bakın.
 
 ## 👤 Geliştirici
 
