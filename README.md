@@ -22,19 +22,14 @@
 
 ### Kaynaktan derleme
 
-### 1. Depoyu klonlayın
+# 1. Depoyu klonlayın
 
 ```bash
 git clone https://github.com/BleuAxolotlTR/2S-Launcher.git
 cd 2S-Launcher
 ```
 
-> Projede alt modül (submodule) varsa şunu da çalıştırın:
-> ```bash
-> git submodule update --init --recursive
-> ```
-
-### 2. Android Studio ile derleme
+# 2. Android Studio ile derleme
 
 1. Android Studio'yu açın ve **File → Open** ile proje klasörünü seçin.
 2. Gradle senkronizasyonunun bitmesini bekleyin. Eksik SDK bileşenleri için Android Studio indirme önerecektir.
@@ -78,7 +73,7 @@ app/build/outputs/apk/debug/app-debug.apk
 
 Çıktı: `app/build/outputs/apk/release/app-release.apk`
 
-```
+
 ## 🚀 Kullanım
 
 1. Launcher'ı açın.
