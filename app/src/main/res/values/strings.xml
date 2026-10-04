@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2S Launcher</string>
+    <string name="essentials">Essentials</string>
+    <string name="others">Others</string>
+    <string name="add_app">+</string>
+
+    <!-- Context menu actions -->
+    <string name="menu_remove_from_essentials">Remove from Essentials</string>
+    <string name="menu_add_to_essentials">Add to Essentials</string>
+    <string name="menu_uninstall">Uninstall App</string>
+    <string name="menu_app_info">App Info</string>
+    <string name="menu_hide_app">Hide App</string>
+    <string name="menu_unhide_app">Unhide App</string>
+
+    <!-- Essentials full notice -->
+    <string name="essentials_full">Essentials is full (6/6). Remove an app first.</string>
+    <string name="select_app_from_others">Tap an app in Others to assign to this slot</string>
+
+    <!-- Hidden folder -->
+    <string name="hidden_folder_name">Hidden</string>
+    <string name="no_hidden_apps">No hidden apps</string>
+    <string name="auth_required_for_hidden">Authenticate to access hidden apps</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="device_not_secured">Set a device lock (PIN, pattern, or fingerprint) in Android Settings to use the Hidden Folder.</string>
+
+    <!-- App lifecycle toasts -->
+    <string name="launch_failed">Could not launch app</string>
+    <string name="app_removed">Removed from Essentials</string>
+    <string name="app_hidden">App hidden</string>
+    <string name="app_unhidden">App restored</string>
+
+    <!-- Slot picking -->
+    <string name="added_to_essentials">%1$s added to Essentials</string>
+
+    <!-- Settings screen (R5, R6) -->
+    <string name="settings">Settings</string>
+    <string name="settings_divider">Pane Size Ratio</string>
+    <string name="settings_divider_desc">Drag to adjust the Essentials / Others split</string>
+    <string name="settings_show_app_names">Show App Names</string>
+    <string name="settings_show_app_names_desc">Display labels below icons in Others</string>
+    <string name="settings_icon_shape">Icon Shape</string>
+    <string name="settings_icon_shape_rounded">Rounded Square</string>
+    <string name="settings_icon_shape_circle">Circle</string>
+    <string name="settings_icon_shape_squircle">Squircle</string>
+    <string name="settings_appearance">Appearance</string>
+
+    <string name="settings_transparency">Surface Opacity</string>
+    <string name="settings_transparency_desc">Adjust how much the wallpaper shows through</string>
+    
+    <string name="settings_theme_mode">Theme Mode</string>
+    <string name="settings_theme_system">Follow System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_saved">Settings saved</string>
+
+    <!-- Dialogs & UI strings -->
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="select_app">Select App</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="brightness">Brightness</string>
+</resources>

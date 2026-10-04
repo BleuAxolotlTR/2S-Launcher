@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recentOverlayContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="25dp"
+    android:background="#D9080814">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Üst Durum Çubuğu Boşluğu -->
+        <View
+            android:id="@+id/recentStatusBarSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <!-- Üst Bar: Başlık & Kapatma Butonu -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_title_badge"
+                android:text="⚡ GÖREV YÖNETİCİSİ"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:id="@+id/btnDismissRecents"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_btn_wallpaper"
+                android:gravity="center"
+                android:text="✕"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="4dp" />
+        </RelativeLayout>
+
+        <!-- Bilgilendirme Metni -->
+        <TextView
+            android:id="@+id/tvRecentHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uygulamayı kapatmak için ✕ butonuna dokunun"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Boş Liste Görünümü -->
+        <TextView
+            android:id="@+id/tvRecentEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="✨ Açık uygulama bulunmuyor"
+            android:textColor="@color/text_hint"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!-- Yatay Kaydırılabilir Uygulama Kartları Listesi -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never" />
+
+        <!-- Alt Kısım: Tümünü Kapat Butonu -->
+        <LinearLayout
+            android:id="@+id/recentBottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/btnClearAllRecent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn_clear_all"
+                android:text="🗑️ TÜMÜNÜ SONLANDIR"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:elevation="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

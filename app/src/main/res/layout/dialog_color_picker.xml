@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bg_others_frame">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Renk Önizleme Kutusu -->
+    <View
+        android:id="@+id/colorPreview"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_slot_filled" />
+
+    <!-- Hızlı Renk Paleti (Hazır Temalar) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hazır Renkler"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/presetColorsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Ton (Hue) Slider -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hue"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary" />
+
+    <SeekBar
+        android:id="@+id/seekBarHue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="360"
+        android:progress="240"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Doygunluk (Saturation) Slider -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saturation"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary" />
+
+    <SeekBar
+        android:id="@+id/seekBarSat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="60"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Parlaklık (Value) Slider -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brightness"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary" />
+
+    <SeekBar
+        android:id="@+id/seekBarVal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="20"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Butonlar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textColor="@color/text_secondary" />
+
+        <Button
+            android:id="@+id/btnApply"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/ok"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

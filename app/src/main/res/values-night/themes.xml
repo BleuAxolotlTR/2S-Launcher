@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Accent Color Overlays for custom user theme selections (Dark Mode) -->
+    <style name="ThemeOverlay.Launcher2S.Red" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#FFB4AB</item>
+        <item name="colorPrimaryContainer">#5C0A0A</item>
+        <item name="colorOnPrimaryContainer">#FFDAD6</item>
+        <item name="colorSecondaryContainer">#4D1212</item>
+        <item name="colorOnSecondaryContainer">#FFDAD6</item>
+        <item name="colorOutline">#FFB4AB</item>
+        <item name="colorOutlineVariant">#534341</item>
+    </style>
+
+    <style name="ThemeOverlay.Launcher2S.Blue" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#9ECAFF</item>
+        <item name="colorPrimaryContainer">#0A365C</item>
+        <item name="colorOnPrimaryContainer">#D1E4FF</item>
+        <item name="colorSecondaryContainer">#122B4D</item>
+        <item name="colorOnSecondaryContainer">#D1E4FF</item>
+        <item name="colorOutline">#9ECAFF</item>
+        <item name="colorOutlineVariant">#42474E</item>
+    </style>
+
+    <style name="ThemeOverlay.Launcher2S.Green" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#81C784</item>
+        <item name="colorPrimaryContainer">#0D4511</item>
+        <item name="colorOnPrimaryContainer">#C8E6C9</item>
+        <item name="colorSecondaryContainer">#133816</item>
+        <item name="colorOnSecondaryContainer">#C8E6C9</item>
+        <item name="colorOutline">#81C784</item>
+        <item name="colorOutlineVariant">#414941</item>
+    </style>
+
+    <style name="ThemeOverlay.Launcher2S.Purple" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#E1BEE7</item>
+        <item name="colorPrimaryContainer">#3E0054</item>
+        <item name="colorOnPrimaryContainer">#F3E5F5</item>
+        <item name="colorSecondaryContainer">#351142</item>
+        <item name="colorOnSecondaryContainer">#F3E5F5</item>
+        <item name="colorOutline">#E1BEE7</item>
+        <item name="colorOutlineVariant">#4A434D</item>
+    </style>
+
+    <style name="ThemeOverlay.Launcher2S.Orange" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#FFB74D</item>
+        <item name="colorPrimaryContainer">#5C3000</item>
+        <item name="colorOnPrimaryContainer">#FFE0B2</item>
+        <item name="colorSecondaryContainer">#4D2A08</item>
+        <item name="colorOnSecondaryContainer">#FFE0B2</item>
+        <item name="colorOutline">#FFB74D</item>
+        <item name="colorOutlineVariant">#51453A</item>
+    </style>
+
+    <style name="ThemeOverlay.Launcher2S.Gold" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">#FFF59D</item>
+        <item name="colorPrimaryContainer">#4D4200</item>
+        <item name="colorOnPrimaryContainer">#FFF9C4</item>
+        <item name="colorSecondaryContainer">#3D360B</item>
+        <item name="colorOnSecondaryContainer">#FFF9C4</item>
+        <item name="colorOutline">#FFF59D</item>
+        <item name="colorOutlineVariant">#4C4635</item>
+    </style>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Essentials slot dimensions (6 Slots: 4 top, 2 bottom) -->
+    <dimen name="slot_size">70dp</dimen>
+    <dimen name="slot_icon_size">70dp</dimen>
+    <dimen name="slot_margin">6dp</dimen>
+    <dimen name="slot_corner_radius">16dp</dimen>
+    <dimen name="slot_border_width">1dp</dimen>
+
+    <!-- Others grid & frame dimensions -->
+    <dimen name="others_icon_size">48dp</dimen>
+    <dimen name="others_icon_corner_radius">14dp</dimen>
+    <dimen name="others_item_padding">5dp</dimen>
+    <dimen name="others_frame_corner_radius">18dp</dimen>
+    <dimen name="others_frame_padding">8dp</dimen>
+    <dimen name="others_frame_margin_horizontal">16dp</dimen>
+    <dimen name="others_frame_margin_vertical">4dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_title">20sp</dimen>
+    <dimen name="text_app_label">10.5sp</dimen>
+    <dimen name="text_slot_label">9sp</dimen>
+    <dimen name="text_add_icon">28sp</dimen>
+
+    <!-- General spacing -->
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">14dp</dimen>
+
+    <!-- Action Buttons -->
+    <dimen name="action_btn_size">44dp</dimen>
+    <dimen name="action_btn_text_size">18sp</dimen>
+</resources>

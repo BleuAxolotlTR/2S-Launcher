@@ -1,0 +1,21 @@
+# Derleme ciktilari
+build/
+.gradle/
+.kotlin/
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Gizli dosyalar - ASLA GitHub'a gonderme
+local.properties
+keystore.properties
+*.keystore
+*.jks
+*.pem
+*.p12
+.env
+google-services.json

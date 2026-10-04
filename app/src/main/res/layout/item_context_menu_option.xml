@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/bg_menu_option"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/menuOptionIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="14dp"
+        app:tint="?attr/colorPrimary"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/menuOptionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        app:tint="?attr/colorOnSurfaceVariant"
+        android:alpha="0.6"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_chevron_right" />
+
+</LinearLayout>

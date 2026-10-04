@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    layout-land/activity_main.xml  (used for all landscape configurations)
+    Tablet landscape (9"+ diagonal) shows Essentials and Others side-by-side.
+    Phone landscape falls through to this too, which is acceptable.
+
+    Detected as tablet in MainActivity: if screen diagonal < 9", this layout
+    is still used in landscape but the code may choose to fall back to
+    the stacked layout. See MainActivity.isTablet().
+
+    R8.2: Landscape tablet — Essentials left, Others right.
+          Hidden Folder + Settings strips sit below the Essentials pane.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@android:color/transparent">
+
+    <!-- Wallpaper dim overlay -->
+    <View
+        android:id="@+id/wallpaperDimOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000" />
+
+    <!-- Side-by-side split for landscape/tablet -->
+    <LinearLayout
+        android:id="@+id/mainContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- ======== LEFT PANE: ESSENTIALS ======== -->
+        <LinearLayout
+            android:id="@+id/essentialsContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.85"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/others_frame_margin_horizontal"
+            android:paddingEnd="@dimen/others_frame_margin_horizontal"
+            android:paddingTop="@dimen/others_frame_margin_vertical"
+            android:paddingBottom="@dimen/others_frame_margin_vertical">
+
+            <!-- Status bar / notch spacer (dynamic height) -->
+            <View
+                android:id="@+id/statusBarSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- Essentials title badge -->
+            <TextView
+                android:id="@+id/tvEssentialsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_title_badge"
+                android:text="@string/essentials"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <!-- Essentials slots (6: 4 top + 2 bottom) -->
+            <LinearLayout
+                android:id="@+id/essentialsFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_others_frame"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/others_frame_padding">
+
+                <!-- Row 1: 4 slots -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot0"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot1"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot2"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot3"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                </LinearLayout>
+
+                <!-- Row 2: 2 centered slots -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot4"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot5"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--
+                Hidden Folder strip (R8.2: sits below Essentials pane on tablet landscape).
+                On phone portrait this is inside the OthersAdapter instead.
+                For landscape, we keep it here as a static View outside the RecyclerView.
+            -->
+            <!-- Hidden folder row -->
+            <LinearLayout
+                android:id="@+id/hiddenFolderRowLand"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_hidden_folder"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_folder_hidden"
+                    android:scaleType="fitCenter"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:id="@+id/hiddenFolderLabelLand"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/hidden_folder_name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:id="@+id/hiddenFolderCountLand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_count_badge"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp" />
+
+            </LinearLayout>
+
+            <!-- Settings strip -->
+            <LinearLayout
+                android:id="@+id/settingsRowLand"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_hidden_folder"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_settings"
+                    android:scaleType="fitCenter"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/settings"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:maxLines="1" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:scaleType="fitCenter"
+                    android:importantForAccessibility="no" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Vertical divider -->
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <!-- ======== RIGHT PANE: OTHERS ======== -->
+        <LinearLayout
+            android:id="@+id/othersContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.15"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/others_frame_margin_horizontal"
+            android:paddingEnd="@dimen/others_frame_margin_horizontal"
+            android:paddingTop="@dimen/others_frame_margin_vertical"
+            android:paddingBottom="@dimen/others_frame_margin_vertical">
+
+            <!-- Others title badge -->
+            <TextView
+                android:id="@+id/tvOthersTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_title_badge"
+                android:text="@string/others"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Others RecyclerView frame -->
+            <FrameLayout
+                android:id="@+id/othersFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_others_frame"
+                android:padding="@dimen/others_frame_padding">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/othersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="never" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

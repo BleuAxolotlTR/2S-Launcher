@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Base static colors used as fallbacks / overlays.
+        Dynamic Color from system wallpaper overrides colorPrimary etc. at runtime via Material3.
+    -->
+
+    <!-- Overlay tints (semi-transparent — used directly in drawables/layouts) -->
+    <color name="bg_essentials">#1AFFFFFF</color>
+    <color name="bg_others_frame">#26FFFFFF</color>
+    <color name="bg_others_inner">#22000000</color>
+
+    <!-- Essentials slot colors -->
+    <color name="slot_border">#88FFFFFF</color>
+    <color name="slot_border_highlight">#FFFFFFFF</color>
+    <color name="slot_border_shadow">#44000000</color>
+    <color name="slot_empty_bg">#20FFFFFF</color>
+    <color name="slot_filled_bg">#38FFFFFF</color>
+    <color name="slot_selected_glow">#CCFFD000</color>
+    <color name="slot_drag_highlight">#8800D2FF</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#CCECEFF1</color>
+    <color name="text_hint">#88FFFFFF</color>
+    <color name="text_retro_gold">#FFFFE066</color>
+
+    <!-- Divider & badges -->
+    <color name="divider">#44FFFFFF</color>
+    <color name="badge_bg">#44000000</color>
+    <color name="badge_border">#66FFFFFF</color>
+
+    <!-- Utility -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Missing UI & Lock colors -->
+    <color name="primary_dark">#121212</color>
+    <color name="accent">#00D2FF</color>
+    <color name="accent_gold">#FFD700</color>
+    <color name="bg_default">#121212</color>
+    <color name="btn_color_top">#4A4A4A</color>
+    <color name="btn_color_bottom">#2A2A2A</color>
+    <color name="btn_confirm_top">#00A8FF</color>
+    <color name="btn_confirm_bottom">#0066CC</color>
+    <color name="btn_wallpaper_top">#4A4A4A</color>
+    <color name="btn_wallpaper_bottom">#2A2A2A</color>
+</resources>

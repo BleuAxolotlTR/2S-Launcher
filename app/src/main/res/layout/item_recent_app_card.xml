@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="220dp"
+    android:layout_height="320dp"
+    android:layout_margin="12dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- 3DS Ana Kart Gövdesi -->
+    <LinearLayout
+        android:id="@+id/cardBody"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_recent_card"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Büyük Uygulama Simgesi (Köşeleri Yuvarlatılmış) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/recentAppIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:importantForAccessibility="no" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Uygulama Adı -->
+        <TextView
+            android:id="@+id/recentAppLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Paket Adı / Durum Rozeti -->
+        <TextView
+            android:id="@+id/recentAppPackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_title_badge"
+            android:text="⚡ Çalışıyor"
+            android:textColor="@color/accent"
+            android:textSize="10sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp" />
+
+    </LinearLayout>
+
+    <!-- Kart Kapatma Butonu (✕) -->
+    <TextView
+        android:id="@+id/btnRecentClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_btn_color"
+        android:gravity="center"
+        android:text="✕"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:elevation="6dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</FrameLayout>

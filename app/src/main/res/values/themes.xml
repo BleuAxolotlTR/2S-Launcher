@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        2S Launcher — Material You theme.
+        Uses Material3 (Theme.Material3) as the base so DynamicColors can apply
+        the system wallpaper palette on Android 12+.
+        android:windowShowWallpaper keeps the home-screen live wallpaper visible.
+    -->
+    <style name="Theme.Launcher2S" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Show system wallpaper behind the launcher -->
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- System edge-to-edge support -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">false</item>
+    </style>
+
+    <!-- Settings Activity theme — adapts to light/dark via Material3 surface roles -->
+    <style name="Theme.Launcher2S.Settings" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowShowWallpaper">false</item>
+        <!-- Use ?attr/colorSurfaceContainerLow so the background softens glare in light mode -->
+        <item name="android:windowBackground">?attr/colorSurfaceContainerLow</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">false</item>
+    </style>
+
+    <!-- Accent color overlays removed – launcher always uses system dynamic color -->
+
+    <!--
+        Context-menu dialog styled to match the dark launcher aesthetic.
+        Inherits from Material3 dialog so Dynamic Color applies.
+    -->
+    <style name="DS_Dialog" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/bg_dialog_rounded</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:windowMinWidthMajor">75%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
+</resources>

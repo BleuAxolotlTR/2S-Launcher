@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_settings.xml
+    Launcher settings screen.  Uses a ScrollView so future options can be added
+    without restructuring.  All dp/sp values come from @dimen — no hardcoded px.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".SettingsActivity">
+
+
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Status-bar spacer (set dynamically) -->
+        <View
+            android:id="@+id/settingsStatusBarSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <!-- Title bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/btnSettingsBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_close"
+                app:tint="?attr/colorOnSurface"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:contentDescription="@string/cancel"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/settings"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Scrollable settings content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ── APPEARANCE SECTION ── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_appearance"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.12"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Card: settings group -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSettingsGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                    app:cardElevation="0dp"
+                    app:strokeColor="?attr/colorOutlineVariant"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Show App Names toggle -->
+                        <LinearLayout
+                            android:id="@+id/rowShowAppNames"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_show_app_names"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_show_app_names_desc"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="2dp" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.materialswitch.MaterialSwitch
+                                android:id="@+id/switchShowAppNames"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="?attr/colorOutlineVariant" />
+
+                        <!-- Icon Shape selector -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/settings_icon_shape"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="10dp" />
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chipGroupIconShape"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:singleSelection="true"
+                                app:selectionRequired="true">
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipRoundedSquare"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_icon_shape_rounded"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipCircle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_icon_shape_circle"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipSquircle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_icon_shape_squircle"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                            </com.google.android.material.chip.ChipGroup>
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="?attr/colorOutlineVariant" />
+
+                        <!-- Transparency slider -->
+                        <LinearLayout
+                            android:id="@+id/rowTransparencySlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/settings_transparency"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/settings_transparency_desc"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="2dp" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tvTransparencyValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="?attr/colorPrimary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:minWidth="44dp"
+                                    android:gravity="end"
+                                    tools:text="85%" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/sliderTransparency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:valueFrom="30"
+                                android:valueTo="100"
+                                android:stepSize="1"
+                                android:value="80" />
+
+                        </LinearLayout>
+
+                        <!-- Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="?attr/colorOutlineVariant" />
+
+                        <!-- Theme Mode selector (Dark / Light / System) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/settings_theme_mode"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="10dp" />
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chipGroupThemeMode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:singleSelection="true"
+                                app:selectionRequired="true">
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipThemeSystem"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_theme_system"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipThemeDark"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_theme_dark"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/chipThemeLight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/settings_theme_light"
+                                    style="@style/Widget.Material3.Chip.Filter" />
+
+                            </com.google.android.material.chip.ChipGroup>
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

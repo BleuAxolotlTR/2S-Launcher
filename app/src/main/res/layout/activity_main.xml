@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@android:color/transparent">
+
+    <!-- Wallpaper dim overlay -->
+    <View
+        android:id="@+id/wallpaperDimOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000" />
+
+    <!-- ==================== MAIN 3DS SPLIT-SCREEN ==================== -->
+    <LinearLayout
+        android:id="@+id/mainContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ==================== TOP PANEL: ESSENTIALS (3DS TOP SCREEN) ==================== -->
+        <LinearLayout
+            android:id="@+id/essentialsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.85"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/others_frame_margin_horizontal"
+            android:paddingEnd="@dimen/others_frame_margin_horizontal"
+            android:paddingTop="@dimen/others_frame_margin_vertical"
+            android:paddingBottom="@dimen/others_frame_margin_vertical">
+
+            <!-- Status bar / notch spacer (dynamic height) -->
+            <View
+                android:id="@+id/statusBarSpacer"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <!-- Essentials title badge (centered) -->
+            <TextView
+                android:id="@+id/tvEssentialsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_title_badge"
+                android:text="@string/essentials"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <!-- Essentials Box (6 slots — 4-over-2 layout: 4 on top, 2 centered below) -->
+            <LinearLayout
+                android:id="@+id/essentialsFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_others_frame"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/others_frame_padding">
+
+                <!-- Row 1: Top 4 buttons -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot0"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot1"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot2"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot3"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                </LinearLayout>
+
+                <!-- Row 2: Bottom 2 buttons (centered underneath top row) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot4"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                    <include layout="@layout/item_essential_slot"
+                        android:id="@+id/slot5"
+                        android:layout_width="@dimen/slot_size"
+                        android:layout_height="@dimen/slot_size"
+                        android:layout_margin="@dimen/slot_margin" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 3DS hinge / divider line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <!-- ==================== BOTTOM PANEL: OTHERS (3DS BOTTOM SCREEN) ==================== -->
+        <LinearLayout
+            android:id="@+id/othersContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.15"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/others_frame_margin_horizontal"
+            android:paddingEnd="@dimen/others_frame_margin_horizontal"
+            android:paddingTop="@dimen/others_frame_margin_vertical"
+            android:paddingBottom="@dimen/others_frame_margin_vertical">
+
+            <!-- Others title badge -->
+            <TextView
+                android:id="@+id/tvOthersTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_title_badge"
+                android:text="@string/others"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 4-sided framed touchscreen area -->
+            <FrameLayout
+                android:id="@+id/othersFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_others_frame"
+                android:padding="@dimen/others_frame_padding">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/othersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="never" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

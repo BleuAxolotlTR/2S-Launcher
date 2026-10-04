@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Turkish localization for context menus -->
+    <string name="menu_remove_from_essentials">Essentials\'tan Kaldır</string>
+    <string name="menu_add_to_essentials">Essentials\'a Ekle</string>
+    <string name="menu_uninstall">Uygulamayı Kaldır</string>
+    <string name="menu_app_info">Uygulama Bilgisi</string>
+    <string name="menu_hide_app">Gizle</string>
+    <string name="menu_unhide_app">Gizlemeyi Kaldır</string>
+    <string name="hidden_folder_name">Gizli</string>
+    <string name="essentials_full">Essentials dolu (6/6). Önce bir uygulama kaldırın.</string>
+    <string name="select_app_from_others">Bu yuvaya eklemek için aşağıdan bir uygulama seçin</string>
+    <string name="launch_failed">Uygulama başlatılamadı</string>
+    <string name="no_hidden_apps">Gizli uygulama yok</string>
+    <string name="app_removed">Essentials\'tan kaldırıldı</string>
+    <string name="app_hidden">Uygulama gizlendi</string>
+    <string name="app_unhidden">Uygulama geri getirildi</string>
+    <string name="auth_required_for_hidden">Gizli uygulamaları açmak için kimliğinizi doğrulayın</string>
+    <string name="auth_failed">Kimlik doğrulaması başarısız</string>
+    <string name="device_not_secured">Gizli Klasör\'ü kullanmak için Android Ayarlar\'dan cihaz kilidi (PIN, desen veya parmak izi) ayarlayın.</string>
+    <string name="added_to_essentials">%1$s Essentials\'a eklendi</string>
+    <string name="settings">Ayarlar</string>
+    <string name="settings_divider">Bölme Oranı</string>
+    <string name="settings_divider_desc">Essentials / Others bölme konumunu ayarlayın</string>
+    <string name="settings_show_app_names">Uygulama Adlarını Göster</string>
+    <string name="settings_show_app_names_desc">Others\'da simgelerin altında etiketleri göster</string>
+    <string name="settings_icon_shape">Simge Şekli</string>
+    <string name="settings_icon_shape_rounded">Yuvarlak Kare</string>
+    <string name="settings_icon_shape_circle">Daire</string>
+    <string name="settings_icon_shape_squircle">Süperdaire</string>
+    <string name="settings_appearance">Görünüm</string>
+    <string name="settings_transparency">Şeffaflık Efekti</string>
+    <string name="settings_transparency_desc">Arayüz elemanlarına hafif şeffaflık uygular</string>
+    <string name="settings_accent_color">Vurgu Rengi</string>
+    <string name="settings_accent_system">Cihaz Teması</string>
+    <string name="settings_accent_red">Kırmızı</string>
+    <string name="settings_accent_blue">Mavi</string>
+    <string name="settings_accent_green">Yeşil</string>
+    <string name="settings_accent_purple">Mor</string>
+    <string name="settings_accent_orange">Turuncu</string>
+    <string name="settings_accent_gold">Altın</string>
+    <string name="settings_accent_custom">Özel...</string>
+    <string name="settings_theme_mode">Tema Modu</string>
+    <string name="settings_theme_system">Sistem Varsayılanı</string>
+    <string name="settings_theme_light">Açık</string>
+    <string name="settings_theme_dark">Koyu</string>
+    <string name="settings_saved">Ayarlar kaydedildi</string>
+</resources>

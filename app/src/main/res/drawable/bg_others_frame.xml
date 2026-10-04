@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dış Çerçeve (4 Kenarı Tam Çizgili) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#40000000" />
+            <stroke
+                android:width="1.5dp"
+                android:color="?attr/colorOutline" />
+            <corners android:radius="@dimen/others_frame_corner_radius" />
+        </shape>
+    </item>
+    <!-- İç Dolgu -->
+    <item
+        android:top="2dp"
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/colorSurfaceContainerLow" />
+            <corners android:radius="@dimen/others_frame_corner_radius" />
+        </shape>
+    </item>
+</layer-list>

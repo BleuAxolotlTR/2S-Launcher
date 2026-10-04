@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog_rounded"
+    android:padding="20dp">
+
+    <!-- Header: Folder Icon + Title + Close Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_folder_hidden"
+            app:tint="?attr/colorPrimary"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/hiddenDialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/btnHiddenDialogClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_close_button"
+            android:src="@drawable/ic_close"
+            app:tint="?attr/colorOnSurface"
+            android:padding="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:importantForAccessibility="no" />
+
+    </LinearLayout>
+
+    <!-- Subtle divider line matching context menu -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorOutlineVariant"
+        android:layout_marginBottom="12dp" />
+
+    <!-- RecyclerView for hidden apps -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hiddenAppsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:overScrollMode="never" />
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- Hidden folder row: icon + label + count badge -->
+    <LinearLayout
+        android:id="@+id/hiddenFolderRow"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_hidden_folder"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/hiddenFolderIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_folder_hidden"
+            app:tint="?attr/colorOnSecondaryContainer"
+            android:scaleType="fitCenter"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/hiddenFolderLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:textColor="?attr/colorOnSecondaryContainer"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/hiddenFolderCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_count_badge"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

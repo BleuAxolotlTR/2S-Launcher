@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+// Imza bilgileri koda yazilmaz, keystore.properties dosyasindan okunur.
+// Bu dosya .gitignore'da oldugu icin GitHub'a gitmez.
+def keystorePropsFile = rootProject.file("keystore.properties")
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+
+android {
+    namespace 'com.flavor2s.launcher'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.flavor2s.launcher"
+        minSdk 31
+        targetSdk 35
+        versionCode 4
+        versionName "2.0.0"
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePropsFile.exists()) {
+                storeFile file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (keystorePropsFile.exists()) {
+                signingConfig signingConfigs.release
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // ViewModel + LiveData for state preservation across rotation (R8.4)
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.6'
+    implementation 'androidx.activity:activity-ktx:1.9.2'
+
+    // DataStore Preferences for settings (R6)
+    implementation 'androidx.datastore:datastore-preferences:1.1.1'
+}
