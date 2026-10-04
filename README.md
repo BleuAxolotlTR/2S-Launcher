@@ -33,8 +33,6 @@ cd 2S-Launcher
 1. Launcher'ı açın.
 2. Ve Kullanmaya Başlayın.
 
-## 🗂️ Proje Yapısı
-
 ## 🤝 Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır!
