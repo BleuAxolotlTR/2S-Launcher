@@ -22,14 +22,14 @@
 
 ### Kaynaktan derleme
 
-# 1. Depoyu klonlayın
+## 1. Depoyu klonlayın
 
 ```bash
 git clone https://github.com/BleuAxolotlTR/2S-Launcher.git
 cd 2S-Launcher
 ```
 
-# 2. Android Studio ile derleme
+## 2. Android Studio ile derleme
 
 1. Android Studio'yu açın ve **File → Open** ile proje klasörünü seçin.
 2. Gradle senkronizasyonunun bitmesini bekleyin. Eksik SDK bileşenleri için Android Studio indirme önerecektir.
